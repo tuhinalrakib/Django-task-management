@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 
 # Create your views here.
 def home(request):
@@ -6,3 +7,7 @@ def home(request):
     # Transform data
     # data pass 
     # HTTP response / json response
+    return HttpResponse("Welcome to our website")
+
+def contact(request):
+    return HttpResponse("This is contact page")
