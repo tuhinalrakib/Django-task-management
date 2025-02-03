@@ -11,3 +11,11 @@ def home(request):
 
 def contact(request):
     return HttpResponse("This is contact page")
+
+def show_task(request):
+    return HttpResponse("<h1>This is Task page<h1/>")
+
+def show_specific_task(request, id):
+    print("id", id)
+    print("ID Type", type(id))
+    return HttpResponse(f"<h1>This is specific task Page {id}<h1/>")
