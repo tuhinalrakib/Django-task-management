@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin Dashboard</title>
+    <title>{% block title %}{% endblock title %}</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
   </head>
   <body class="bg-gray-50 p-6">
     <header class="flex justify-between items-center w-[90%] mx-auto">
@@ -36,7 +37,7 @@
       </div>
     </header>
     <main>
-      <!-- Task Card -->
+       {% comment %} Task Card {% endcomment %}
       <div class="w-[90%] mx-auto grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
         <!-- Total Task -->
         <div class="bg-white rounded-xl shadow-md p-6">
@@ -152,91 +153,11 @@
           </div>
         </div>
       </div>
+      {% block tasks %}
 
-      <!-- Task table -->
-      <div class="bg-white rounded-xl w-[90%] mx-auto shadow-md ">
-        <div class="grid grid-cols-4 p-4 border-b border-gray-100 text-sm text-gray-500">
-          <div class="uppercase">Task Title</div>
-          <div class="uppercase">Priority</div>
-          <div class="uppercase">Team</div>
-          <div class="uppercase">Created At</div>
-        </div>
-        <!-- Task table items -->
-        <div class="divide-y-2 divide-red-500">
-          <!-- task 1 -->
-          <div class="grid grid-cols-4 p-4 gap-4 items-center">
-            <div class="flex items-center gap-2">
-              <div class="w-2 h-2 bg-green-500 rounded-full"></div>
-              <div>
-                <span>Test Low Task</span>
-              </div>
-            </div>
-            <div>
-              <span class="py-2 px-4 bg-blue-100 text-blue-600 text-sm rounded-2xl">Low</span>
-            </div>
-            <div>
-              <div class="flex -space-x-2">
-                <div class="w-8 h-8 rounded-full bg-blue-500 flex justify-center items-center text-white text-sm border-2 border-white">CA</div>
-                <div class="w-8 h-8 rounded-full bg-blue-500 flex justify-center items-center text-white text-sm border-2 border-white">JS</div>
-                <div class="w-8 h-8 rounded-full bg-blue-500 flex justify-center items-center text-white text-sm border-2 border-white">B</div>
-              </div>
-            </div>
-            <div>
-              <span class="text-gray-500">9 Months ago</span>
-            </div>
-          </div>
-        </div>
-        <!-- Task 2 -->
-        <div class="divide-y-2 divide-red-500">
-          <div class="grid grid-cols-4 p-4 gap-4 items-center">
-            <div class="flex items-center gap-2">
-              <div class="w-2 h-2 bg-green-500 rounded-full"></div>
-              <div>
-                <span>Test Task</span>
-              </div>
-            </div>
-            <div>
-              <span class="py-2 px-4 bg-slate-200 text-slate-600 text-sm rounded-2xl">Normal</span>
-            </div>
-            <div>
-              <div class="flex -space-x-2">
-                <div class="w-8 h-8 rounded-full bg-blue-500 flex justify-center items-center text-white text-sm border-2 border-white">AJ</div>
-                <div class="w-8 h-8 rounded-full bg-blue-500 flex justify-center items-center text-white text-sm border-2 border-white">EV</div>
-                <div class="w-8 h-8 rounded-full bg-blue-500 flex justify-center items-center text-white text-sm border-2 border-white">B</div>
-              </div>
-            </div>
-            <div>
-              <span class="text-gray-500">9 Months ago</span>
-            </div>
-          </div>
-        </div>
-        <!-- Task 3 -->
-        <div class="divide-y-2 divide-red-500">
-          <div class="grid grid-cols-4 p-4 gap-4 items-center">
-            <div class="flex items-center gap-2">
-              <div class="w-2 h-2 bg-green-500 rounded-full"></div>
-              <div>
-                <span>Test Low Task</span>
-              </div>
-            </div>
-            <div>
-              <span class="py-2 px-4 bg-blue-100 text-blue-600 text-sm rounded-2xl">Low</span>
-            </div>
-            <div>
-              <div class="flex -space-x-2">
-                <div class="w-8 h-8 rounded-full bg-blue-500 flex justify-center items-center text-white text-sm border-2 border-white">CA</div>
-                <div class="w-8 h-8 rounded-full bg-blue-500 flex justify-center items-center text-white text-sm border-2 border-white">JS</div>
-                <div class="w-8 h-8 rounded-full bg-blue-500 flex justify-center items-center text-white text-sm border-2 border-white">AJ</div>
-                <div class="w-8 h-8 rounded-full bg-blue-500 flex justify-center items-center text-white text-sm border-2 border-white">B</div>
-              </div>
-            </div>
-            <div>
-              <span class="text-gray-500">9 Months ago</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      
+      {% endblock tasks %}
+
     </main>
+    {% include "footer.html" %}
   </body>
 </html>
