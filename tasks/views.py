@@ -8,3 +8,9 @@ def manager_dashboard(request):
 
 def user_dashboard(request):
     return render(request, "dashboard/user-dashboard.html")
+
+def test(request):
+    context = {
+        "names" : ["Tuhin","Rakib","Asma"]
+    }
+    return render(request, "test.html", context)
